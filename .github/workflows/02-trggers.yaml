@@ -1,0 +1,13 @@
+name: Triggers
+
+# Controls when the workflow will run (Triggers on every code push)
+on: workflow_dispatch
+#[push]
+
+jobs:
+  trigger:   #job name
+    # The type of virtual machine runner the job will run on
+    runs-on: ubuntu-latest #github hosted runners
+    steps:
+      - name: manual
+        run: echo "Manually dispatched."
