@@ -1,8 +1,10 @@
 name: Triggers
 
 # Controls when the workflow will run (Triggers on every code push)
-on:
-  push:
+on:  # if someone opens pull request for main branch then this will triiger.
+  pull_request:
+    types:
+      - opened
     branches:
       - 'main'
 #workflow_dispatch

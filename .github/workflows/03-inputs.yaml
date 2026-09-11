@@ -1,0 +1,39 @@
+name: Inputs
+
+# Controls when the workflow will run (Triggers on every code push)
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+# if someone opens pull request for main branch then this will triiger.
+  # pull_request:
+  #   types:
+  #     - opened
+  #   branches:
+  #     - 'main'
+
+#[push]
+
+jobs:
+  trigger:   #job name
+    # The type of virtual machine runner the job will run on
+    runs-on: ubuntu-latest #github hosted runners
+    steps:
+        - name: print inputs
+          run: |
+            echo "Log level: ${{ inputs.loglevel}}"
+            echo "Tags: ${{ inputs.tags }}"
+      # - name: manual
+      #   run: echo "Manually dispatched."
