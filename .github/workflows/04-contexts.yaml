@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest #github hosted runners
     steps:
       - name: print info about the 
-        run: echo "branch name is: ${{ github.ref_name }}"
+        run: echo "branch name is:${{ github.ref_name }}"
         #echo "${{ toJson(github) }}"
