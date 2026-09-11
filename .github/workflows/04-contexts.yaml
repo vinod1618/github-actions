@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest #github hosted runners
     steps:
       - name: print info about the 
-        run: #echo "${{ toJson(github) }}"
-          echo "${{ github.rep_name}}"
+        run: echo "${{ github.rep_name}}"
+        #echo "${{ toJson(github) }}"
