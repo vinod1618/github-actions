@@ -4,7 +4,7 @@ name: Triggers
 on:
   push:
     branches:
-      - 'feature'
+      - 'main'
 #workflow_dispatch
 #[push]
 
@@ -13,7 +13,7 @@ jobs:
     # The type of virtual machine runner the job will run on
     runs-on: ubuntu-latest #github hosted runners
     steps:
-        - name: featurebranch push
+        - name: main ebranch push
           run: echo "Manually dispatched."
       # - name: manual
       #   run: echo "Manually dispatched."
