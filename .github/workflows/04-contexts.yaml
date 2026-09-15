@@ -29,3 +29,10 @@ jobs:
       - name: Print variables
         run: |
           echo "db_url is: ${{ vars.DB_URL}}"
+
+      - name: image tag
+        id: tag
+        run: echo "value=1.0.0"
+
+      - name: previous step output
+        run: echo "Image tag: ${{ steps.tag.outputs.value }}"
