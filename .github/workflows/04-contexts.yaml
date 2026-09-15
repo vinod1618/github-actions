@@ -40,3 +40,11 @@ jobs:
         run: | 
           echo "Image tag is ${{ steps.tag.outputs.value }}"
           echo "component is ${{ steps.tag.outputs.component }}"
+
+      - name: github env
+        run: echo "project=roboshop" >> $GITHUB_ENV
+
+      - name: print github env
+        run: echo "Project is $project"
+
+      
