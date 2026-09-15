@@ -54,4 +54,10 @@ jobs:
     needs: github-context # means depends on above job
     steps:
       - name: prints github env in another job
-        run: echo "image-name is ${{ needs.github-context.outputs.image-version }}"
+        run: echo "image-version is ${{ needs.github-context.outputs.image-version }}"
+
+  scan:
+    runs-on: ubuntu-lates
+    steps:
+    - name: scanning sonar qube
+      run: echo "sonar-scan running.........."
