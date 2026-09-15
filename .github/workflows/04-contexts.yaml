@@ -47,4 +47,9 @@ jobs:
       - name: print github env
         run: echo "Project is $project"
 
-      
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: prints github env in another job
+        run: echo "image tag is ${{ steps.tag.outputs.value}}"
