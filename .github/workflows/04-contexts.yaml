@@ -20,3 +20,8 @@ jobs:
           echo "componenetg is: $component"
           echo "environment is: $environment"
         #echo "${{ toJson(github) }}"
+
+      - name: Print secrets
+        run: |
+          echo "secret value: ${{ secrets.DB_USER }}"
+          echo "DB passeord is: ${{ secrets.DB_PASSWORD }}"
