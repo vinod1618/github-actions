@@ -2,7 +2,10 @@ name: Context demo
 
 # Controls when the workflow will run (Triggers on every code push)
 on: [push]
-
+env:
+  project: roboshop
+  component: caatalogue
+  environment: dev
 jobs:
   github-context:   #job name
     # The type of virtual machine runner the job will run on
@@ -10,4 +13,10 @@ jobs:
     steps:
       - name: print info about the 
         run: echo "branch name is:${{ github.ref_name }}"
+
+      - name: acccess environment variables
+        run: |
+          echo "Project: $project"
+          echo "componenetg is: $component"
+          echo "environment is: $environment"
         #echo "${{ toJson(github) }}"
