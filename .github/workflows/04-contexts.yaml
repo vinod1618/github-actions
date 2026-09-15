@@ -32,7 +32,7 @@ jobs:
 
       - name: image tag
         id: tag
-        run: echo "value=1.0.0"
+        run: echo "value=1.0.0" >> "$GITHUB_OUTPUT"
 
       - name: previous step output
-        run: echo "Image tag: ${{ steps.tag.outputs.value }}"
+        run: echo "Image tag is: ${{ steps.tag.outputs.value }}"
