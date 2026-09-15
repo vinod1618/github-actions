@@ -10,6 +10,8 @@ jobs:
   github-context:   #job name
     # The type of virtual machine runner the job will run on
     runs-on: ubuntu-latest #github hosted runners
+    outputs:
+      image-version: ${{ steps.tag.outputs.value }}
     steps:
       - name: print info about the 
         run: echo "branch name is:${{ github.ref_name }}"
@@ -41,7 +43,7 @@ jobs:
           echo "Image tag is ${{ steps.tag.outputs.value }}"
           echo "component is ${{ steps.tag.outputs.component }}"
 
-      - name: github env
+      - name: github env #github env is useful only for within the same job
         run: echo "project=roboshop" >> $GITHUB_ENV
 
       - name: print github env
@@ -49,7 +51,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-
+    needs: github-context # means depends on above job
     steps:
       - name: prints github env in another job
-        run: echo "image tag is ${{ steps.tag.outputs.value }}"
+        run: echo "image-name is ${{ needs.github-context.outputs.image-version }}"
