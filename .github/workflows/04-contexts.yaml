@@ -52,4 +52,4 @@ jobs:
 
     steps:
       - name: prints github env in another job
-        run: echo "image tag is ${{ steps.tag.outputs.value}}"
+        run: echo "image tag is ${{ steps.tag.outputs.value }}"
