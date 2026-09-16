@@ -10,9 +10,9 @@ jobs:
     steps:
       # Step 2: Runs a single standard shell command
       - name: main branch
-        if: github.ref_name == "main"
+        if: github.ref_name == 'main'
         run: echo "This one executes if branch is main"
 
       - name: feature-branch
-        if: github.ref_name == "feature-*"
+        if: github.ref_name == 'feature-*'
         run: echo "This one executes if branch is feature branch"
