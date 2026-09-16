@@ -1,0 +1,14 @@
+name: main-workflow
+
+# Controls when the workflow will run (Triggers on every code push)
+on: [push]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }} # main-workflow-main
+  cancel-in-progress: true # if true present execution will be cancelled and new trigger will happen
+
+jobs:
+  say-hello:   #job name
+    runs-on: ubuntu-latest #github hosted runners
+    steps:
+      - name: Run Hello World
+        run: sleep 20

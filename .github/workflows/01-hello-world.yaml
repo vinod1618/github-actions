@@ -9,10 +9,6 @@ jobs:
     runs-on: ubuntu-latest #github hosted runners
 
     steps:
-      # Step 1: Checks out your repository code so the runner can access it
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
       # Step 2: Runs a single standard shell command
       - name: Run Hello World
         run: echo "Hello, World! I am running from GitHub Actions."
