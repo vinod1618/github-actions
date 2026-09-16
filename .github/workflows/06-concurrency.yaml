@@ -2,6 +2,7 @@ name: main-workflow
 
 # Controls when the workflow will run (Triggers on every code push)
 on: [push]
+timeout-minutes: 30 # Restricts the entire job to 30 minutes
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }} # main-workflow-main
   cancel-in-progress: true # if true present execution will be cancelled and new trigger will happen
