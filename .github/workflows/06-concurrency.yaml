@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest #github hosted runners
     steps:
       - name: Run Hello World
-        run: sleep 20
+        run: sleep 60
