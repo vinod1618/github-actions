@@ -13,6 +13,9 @@ jobs:
     outputs:
       image-version: ${{ steps.tag.outputs.value }}
     steps:
+      - name: print info
+        run: |
+          echo "${{ toJson(github) }}"
       - name: print info about the 
         run: echo "branch name is:${{ github.ref_name }}"
 
@@ -61,3 +64,6 @@ jobs:
     steps:
     - name: scanning sonar qube
       run: echo "sonar-scan running.........."
+
+    - name: print job context
+      run: echo "${{ toJson(job) }}"
