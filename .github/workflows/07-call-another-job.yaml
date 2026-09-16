@@ -5,7 +5,6 @@ on: [push]
 jobs:
   feature-pipeline:   #job name
     uses: vinod1618/workflows/.github/workflows/node-js-feature-pipeline.yaml@main
-    runs-on: ubuntu-latest #github hosted runners
     with:
       project: 'roboshop'
       component: 'catalogue'
