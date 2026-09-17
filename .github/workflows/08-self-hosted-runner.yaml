@@ -1,0 +1,13 @@
+name: Self hosted
+# Controls when the workflow will run (Triggers on every code push)
+on: [push]
+
+jobs:
+  say-hello:   #job name
+    # The type of virtual machine runner the job will run on
+    runs-on: self-hosted #github hosted runners
+
+    steps:
+      # Step 2: Runs a single standard shell command
+      - name: Run Hello World
+        run: echo "Hello, World! from the self hosted runner."
